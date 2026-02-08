@@ -1,0 +1,233 @@
+<!doctype html>
+<html class="antialiased scroll-smooth" lang="pt-BR">
+<head>
+    <title>Leticia Argente</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nesta página, você encontra os modelos de atendimento disponíveis, com informações claras sobre formato, nível de acompanhamento e valores">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Leticia Argente">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://leargente.com.br">
+    <meta property="og:image" content="https://leargente.com.br/static/images/og-image.jpg">
+    <meta property="og:description" content="Nesta página, você encontra os modelos de atendimento disponíveis, com informações claras sobre formato, nível de acompanhamento e valores">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="icon" href="static/images/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <script defer src="script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.15.8/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.8/dist/cdn.min.js"></script>
+    <style>
+        * {
+            font-family: Poppins;
+        }
+        .font-playfair {
+            font-family: Playfair Display;
+        }
+    </style>
+</head>
+<body class="bg-[#292522] text-white" x-data="alpine">
+
+    <div class="relative h-screen">
+        <video class="absolute size-full object-cover max-sm:object-[20%]" id="background-video" autoplay loop muted playsinline src="static/videos/background.mp4"></video>
+        <div class="absolute bg-linear-to-t from-[#292522] to-[#292522]/50 size-full"></div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center mx-auto max-xl:px-4 max-w-7xl text-center">
+            <div class="max-w-4xl text-3xl sm:text-5xl lg:text-7xl leading-10 sm:leading-14 lg:leading-20">
+                <p class="font-playfair">A ROTINA CERTA</p>
+                <p class="font-playfair">TRANSFORMA SEU CORPO</p>
+            </div>
+            <p class="font-playfair text-2xl sm:text-3xl lg:text-4xl">e eu te ajudo a construir a sua</p>
+            <p class="mt-8 max-w-2xl text-gray-300 sm:text-lg">Nesta página, você encontra os modelos de atendimento disponíveis, com informações claras sobre formato, nível de acompanhamento e valores, para escolher a opção que mais faz sentido para você</p>
+            <a class="block bg-[#afb57f] mt-8 px-8 py-3 rounded-full w-fit font-semibold text-sm" href="#planos">Comece Agora</a>
+        </div>
+        <div class="top-0 absolute inset-x-0 mx-auto mt-8 max-xl:px-4 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <img class="w-20 sm:w-24" src="static/images/logo.png" loading="lazy">
+                <div class="max-lg:hidden flex items-center font-medium text-sm">
+                    <a class="px-8 py-3 hover:text-[#afb57f] duration-300" href="#apresentacao">Apresentação</a>
+                    <a class="px-8 py-3 hover:text-[#afb57f] duration-300" href="#planos">Planos</a>
+                    <a class="px-8 py-3 hover:text-[#afb57f] duration-300" href="#duvidas">Dúvidas</a>
+                    <a class="px-8 py-3 hover:text-[#afb57f] duration-300" href="https://wa.me/5519999491758">Contato</a>
+                </div>
+                <button class="lg:hidden" @click="menu = true">
+                    <svg class="size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="-top-16 relative gap-8 grid lg:grid-cols-3 mx-auto max-xl:px-4 max-w-7xl text-center">
+        <div class="p-8 border border-[#dd7a37] rounded-xl">
+            <div class="bg-[#afb57f] mx-auto p-4 rounded-full w-fit">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <p class="mt-8 mb-4 font-playfair text-3xl leading-10">Alimentação que cabe na sua vida</p>
+            <p class="text-gray-300">Chega de fazer dieta restritiva e planos impossíveis de manter. Você aprende a comer bem dentro da sua rotina real: trabalho, filhos, cansaço, imprevistos e vida adulta</p>
+        </div>
+        <div class="p-8 border border-[#dd7a37] rounded-xl">
+            <div class="bg-[#afb57f] mx-auto p-4 rounded-full w-fit">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
+                    <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
+                    <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
+                </svg>
+            </div>
+            <p class="mt-8 mb-4 font-playfair text-3xl leading-10">Estratégias que geram constância</p>
+            <p class="text-gray-300">Eu te ensino o que realmente faz diferença: hábitos simples, ajustes inteligentes e escolhas possíveis. Resultado vem daquilo que você repete, não do que tenta fazer perfeito</p>
+        </div>
+        <div class="p-8 border border-[#dd7a37] rounded-xl">
+            <div class="bg-[#afb57f] mx-auto p-4 rounded-full w-fit">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0 1 18 9.375v9.375a3 3 0 0 0 3-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 0 0-.673-.05A3 3 0 0 0 15 1.5h-1.5a3 3 0 0 0-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6ZM13.5 3A1.5 1.5 0 0 0 12 4.5h4.5A1.5 1.5 0 0 0 15 3h-1.5Z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V9.375Zm9.586 4.594a.75.75 0 0 0-1.172-.938l-2.476 3.096-.908-.907a.75.75 0 0 0-1.06 1.06l1.5 1.5a.75.75 0 0 0 1.116-.062l3-3.75Z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <p class="mt-8 mb-4 font-playfair text-3xl leading-10">Resultados que você sustenta</p>
+            <p class="text-gray-300">Emagrecimento como consequência de uma rotina que funciona. Com orientação clara e prática, do jeito que cabe na vida adulta</p>
+        </div>
+    </div>
+
+    <div class="max-sm:flex max-sm:flex-col items-center gap-x-16 gap-y-8 sm:grid sm:grid-cols-5 mx-auto mt-16 max-xl:px-4 max-w-7xl" id="apresentacao">
+        <img class="col-span-2 rounded-xl" src="static/images/IMG_9664.webp" loading="lazy">
+        <div class="space-y-8 col-span-3 max-sm:text-center">
+            <p class="font-playfair text-3xl sm:text-4xl leading-10">Quem é Leticia Argente?</p>
+            <p class="text-gray-300">Acredito em estratégias simples, escolhas possíveis e constância. Oriento mulheres a estruturarem uma rotina alimentar que realmente funcione. Resultados duradouros começam ajustando a vida que você já vive</p>
+            <a class="block bg-[#afb57f] max-sm:mx-auto px-8 py-3 rounded-full w-fit font-semibold text-sm" href="#planos">Comece Agora</a>
+        </div>
+    </div>
+
+    <div class="space-y-16 mx-auto mt-32 max-xl:px-4 max-w-7xl" id="planos">
+        <div class="space-y-4 text-center">
+            <p class="font-playfair text-3xl sm:text-4xl leading-10">Quais são os meus formatos de atendimento?</p>
+            <p class="mx-auto max-w-3xl text-gray-300">Aqui estão os modelos disponíveis, com informações sobre acompanhamento e valores para você escolher a opção que melhor atenda às suas necessidades</p>
+        </div>
+        <div class="gap-8 grid lg:grid-cols-2">
+            <template x-for="subscription in subscriptions">
+                <div class="border border-[#dd7a37] rounded-xl divide-y divide-[#dd7a37]">
+                    <div class="space-y-4 p-8">
+                        <p class="font-medium text-xl lg:text-2xl" x-text="subscription.name"></p>
+                        <p class="text-gray-300" x-text="subscription.description"></p>
+                        <div class="flex items-center gap-2">
+                            <span class="font-semibold text-2xl sm:text-3xl" x-text="subscription.price"></span>
+                            <span class="font-medium" x-text="subscription.type"></span>
+                        </div>
+                        <a class="block bg-[#afb57f] p-2 rounded-sm w-full font-semibold text-sm text-center" :href="subscription.link" target="_blank">Comece Agora</a>
+                    </div>
+                    <div class="space-y-8 p-8">
+                        <p class="font-medium text-lg lg:text-xl">O que está incluso?</p>
+                        <div class="space-y-4">
+                            <template x-for="include in subscription.included">
+                                <div class="flex items-center gap-4">
+                                    <svg class="size-5 text-[#afb57f] shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-gray-300" x-text="include"></span>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <div class="mx-auto mt-32 max-xl:px-4 max-w-7xl" id="duvidas">
+        <p class="font-playfair text-3xl sm:text-4xl max-sm:text-center leading-10">Perguntas Frequentes</p>
+        <div class="mt-8 border-[#dd7a37] border-b"></div>
+        <template x-for="(question, index) in questions" :key="index">
+            <div class="px-4 py-8 border-[#dd7a37] border-b cursor-pointer" @click="accordion != index ? accordion = index : accordion = null">
+                <div class="flex items-center">
+                    <div class="relative flex items-center">
+                        <svg class="absolute size-6 text-[#afb57f]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                        </svg>
+                        <svg :class="accordion == index ? 'rotate-180' : 'rotate-90'" class="absolute size-6 text-[#afb57f] duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                        </svg>
+                    </div>
+                    <p class="ml-12 text-lg" x-text="question.title"></p>
+                </div>
+                <div x-show="accordion == index" x-collapse.duration.500ms>
+                    <div class="flex gap-4 sm:ml-12 pt-8">
+                        <span class="border border-[#afb57f]"></span>
+                        <p class="text-gray-300" x-text="question.response"></p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <div class="space-y-16 mx-auto mt-32 max-xl:px-4 pb-4 sm:pb-8 max-w-7xl">
+        <div class="max-sm:flex max-sm:flex-col-reverse items-center gap-x-16 gap-y-8 sm:grid sm:grid-cols-5">
+            <div class="space-y-8 col-span-3 max-sm:text-center">
+                <p class="font-playfair text-3xl sm:text-4xl leading-10">Se ainda restou alguma dúvida, estou por aqui</p>
+                <p class="text-gray-300">Centenas de mulheres já estruturaram sua rotina alimentar comigo. Quer saber em qual plano sua situação se encaixa melhor? Envie sua pergunta que respondo com um direcionamento correto</p>
+                <a class="block bg-[#afb57f] max-sm:mx-auto px-8 py-3 rounded-full w-fit font-semibold text-sm" href="https://wa.me/5519999491758">Entrar em Contato</a>
+            </div>
+            <img class="col-span-2 rounded-xl" src="static/images/IMG_9826.webp" loading="lazy">
+        </div>
+        <div class="border-[#dd7a37] border-b"></div>
+        <div class="flex max-sm:flex-col justify-between items-center gap-8">
+            <img class="w-20 sm:w-24" src="static/images/logo.png" loading="lazy">
+            <div class="flex items-center gap-8">
+                <a href="https://wa.me/5519999491758">
+                    <svg class="size-6 hover:text-[#afb57f] duration-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"></path>
+                        </g>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/leargente">
+                    <svg class="size-6 hover:text-[#afb57f] duration-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@leargente">
+                    <svg class="size-6 hover:text-[#afb57f] duration-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+                        <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="z-50 fixed inset-0 bg-black/50"
+        x-show="menu"
+        @click="menu = false"
+        x-transition.opacity.duration.500ms
+        x-cloak
+    >
+    </div>
+    <div
+        :class="{ '-translate-x-72 sm:-translate-x-96': menu }"
+        class="top-0 -right-72 sm:-right-96 z-50 fixed space-y-8 bg-[#292522] p-4 w-72 sm:w-96 h-full duration-500"
+    >
+        <div class="flex justify-between items-center">
+            <p class="font-playfair text-2xl">Menu</p>
+            <button class="cursor-pointer" @click="menu = false">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-y-4 text-sm">
+            <a class="py-3 border-[#dd7a37] border-b hover:text-[#afb57f] duration-300" href="#apresentacao">Apresentação</a>
+            <a class="py-3 border-[#dd7a37] border-b hover:text-[#afb57f] duration-300" href="#planos">Planos</a>
+            <a class="py-3 border-[#dd7a37] border-b hover:text-[#afb57f] duration-300" href="#duvidas">Dúvidas</a>
+            <a class="py-3 border-[#dd7a37] border-b hover:text-[#afb57f] duration-300" href="https://wa.me/5519999491758">Contato</a>
+        </div>
+    </div>
+
+</body>
+</html>
