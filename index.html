@@ -33,7 +33,7 @@
 <body class="bg-[#292522] text-white" x-data="alpine">
 
     <div class="relative h-screen">
-        <video class="absolute size-full object-cover max-sm:object-[20%]" id="background-video" autoplay loop muted playsinline src="static/videos/background.mp4"></video>
+        <video class="absolute size-full object-cover max-sm:object-[20%]" id="background-video" autoplay loop muted playsinline preload="auto" src="static/videos/background.mp4"></video>
         <div class="absolute bg-linear-to-t from-[#292522] to-[#292522]/50 size-full"></div>
         <div class="absolute inset-0 flex flex-col justify-center items-center mx-auto max-xl:px-4 max-w-7xl text-center">
             <div class="max-w-4xl text-3xl sm:text-5xl lg:text-7xl leading-10 sm:leading-14 lg:leading-20">
@@ -231,4 +231,3 @@
 
 </body>
 </html>
-
