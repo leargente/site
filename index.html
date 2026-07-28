@@ -74,7 +74,7 @@
     <!-- ==================== HERO COM VÍDEO DE FUNDO ==================== -->
     <section id="inicio" class="relative flex justify-center items-center pb-32 min-h-screen overflow-hidden">
         <div class="absolute inset-0 bg-linear-to-br from-slate-800 to-olive-700"></div>
-        <video class="absolute inset-0 size-full object-[80%_50%] object-cover lg:object-center" autoplay muted loop playsinline>
+        <video class="absolute inset-0 size-full object-[80%_50%] object-cover lg:object-center" autoplay muted loop playsinline id="background-video">
             <source src="static/videos/background.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-linear-to-b from-slate-900/75 via-slate-900/55 to-slate-900/30"></div>
@@ -686,7 +686,7 @@
     </section>
 
     <!-- ==================== BLOG ==================== -->
-    <section id="blog" class="mx-auto px-4 py-16 max-w-6xl" x-init="fetchPosts()">
+    <section id="blog" class="mx-auto px-4 py-16 max-w-6xl">
         <div class="flex md:flex-row flex-col md:justify-between md:items-end gap-8 mb-16">
             <div>
                 <p class="mb-4 text-clay-600 text-xs uppercase tracking-[0.3em]">Blog</p>
@@ -853,6 +853,15 @@
                         linkPix: "https://www.asaas.com/c/ea59jbwdwlr0vtad",
                         linkCartao: "https://www.asaas.com/c/y425rz9dvrk9cqb0",
                     },
+                },
+
+                init() {
+                    document.addEventListener("visibilitychange", () => {
+                        const video = document.getElementById("background-video")
+                        video.load()
+                        video.play()
+                    })
+                    this.fetchPosts()
                 },
 
                 abrir(id) {
