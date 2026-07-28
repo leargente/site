@@ -593,8 +593,8 @@
                 <p class="text-slate-600">Ambiente reservado, equipamentos de avaliação física e todo o cuidado para que sua consulta seja tranquila do começo ao fim</p>
             </div>
             <div class="relative shadow-xl mx-auto rounded-3xl w-full max-w-xs aspect-9/16 overflow-hidden cursor-pointer" x-data="{ tocando: false }" @click="tocando ? $refs.video.pause() : $refs.video.play()">
-                <video x-ref="video" class="size-full object-cover" preload="metadata" playsinline @play="tocando = true" @pause="tocando = false" @ended="tocando = false">
-                    <source src="static/videos/tour.mp4#t=0.1" type="video/mp4">
+                <video x-ref="video" class="size-full object-cover" poster="static/images/tour.jpg" preload="metadata" playsinline @play="tocando = true" @pause="tocando = false" @ended="tocando = false">
+                    <source src="static/videos/tour.mp4" type="video/mp4">
                 </video>
                 <div x-show="!tocando" x-transition.opacity.duration.300ms class="group absolute inset-0 flex justify-center items-center">
                     <span class="absolute inset-0 bg-slate-900/30"></span>
