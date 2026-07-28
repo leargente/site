@@ -1,1 +1,76 @@
 @import "tailwindcss";
+
+@theme {
+    --color-clay: #C96B37;
+    --color-clay-50: #FAEFE7;
+    --color-clay-100: #F3DCCB;
+    --color-clay-300: #DFA47A;
+    --color-clay-500: #C96B37;
+    --color-clay-600: #B25A2A;
+    --color-clay-700: #94481F;
+    --color-clay-800: #733717;
+
+    --color-slate: #788990;
+    --color-slate-50: #EEF1F2;
+    --color-slate-100: #DDE3E5;
+    --color-slate-200: #C2CCD0;
+    --color-slate-300: #A3B1B7;
+    --color-slate-400: #788990;
+    --color-slate-500: #64757C;
+    --color-slate-600: #526167;
+    --color-slate-700: #414D53;
+    --color-slate-800: #333D42;
+    --color-slate-900: #262E32;
+
+    --color-olive: #AFB57F;
+    --color-olive-50: #F5F6EC;
+    --color-olive-100: #EAECD9;
+    --color-olive-200: #D8DCB8;
+    --color-olive-300: #C4C99B;
+    --color-olive-400: #AFB57F;
+    --color-olive-500: #98A063;
+    --color-olive-600: #7C844C;
+    --color-olive-700: #61683B;
+
+    --color-cream: #F0EDE4;
+
+    --font-display: "Julius Sans One", serif;
+    --font-body: "Jost", sans-serif;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+.marquee-track {
+    animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes card-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.card-in {
+    animation: card-in .8s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.placeholder-img {
+    background: linear-gradient(135deg, #D8DCB8 0%, #AFB57F 55%, #788990 100%);
+}
+
+html {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: clamp(12px, 4vw, 16px);
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track, .card-in { animation: none !important; }
+}
