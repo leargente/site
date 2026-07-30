@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="antialiased scroll-smooth" lang="pt-BR">
+<head>
+    <title>Fome de quê? | Blog da Leticia Argente</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fome de comida, de tempo, de resposta. Artigos sobre o que acontece no seu corpo, no seu prato e na sua cabeça.">
+    <link rel="icon" href="../static/images/favicon.png" type="image/png" sizes="192x192">
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Jost:wght@300;400;500;600&display=swap">
+</head>
+<body class="bg-cream font-body text-slate-800">
+
+    <!-- ==================== HEADER SIMPLES ==================== -->
+    <header class="top-0 z-50 fixed inset-x-0 bg-slate-900/30 backdrop-blur-lg">
+        <div class="flex justify-between items-center gap-8 mx-auto px-4 max-w-6xl h-16">
+            <a href="../index.html#inicio" class="flex items-center gap-3">
+                <img src="../static/images/logo.png" alt="Logo Leticia Argente" class="rounded-full size-8" loading="lazy">
+                <span class="leading-tight">
+                    <span class="block font-display text-cream text-sm tracking-wide">LETICIA ARGENTE</span>
+                    <span class="block text-[9px] text-cream/70 uppercase tracking-[0.3em]">Nutricionista</span>
+                </span>
+            </a>
+            <a href="../index.html#inicio" class="hover:text-clay-300 text-cream text-sm transition duration-300">← Voltar ao site</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO DO BLOG ==================== -->
+    <section class="relative flex items-end min-h-[40vh] overflow-hidden">
+        <div class="absolute inset-0 bg-linear-to-br from-slate-800 to-olive-700"></div>
+        <div class="z-10 relative mx-auto px-4 pb-16 max-w-6xl text-cream">
+            <p class="mb-4 text-clay-300 text-xs uppercase tracking-[0.3em]">Blog</p>
+            <h1 class="font-display text-4xl md:text-6xl">Fome de quê?</h1>
+            <p class="mt-6 max-w-xl text-cream/80 text-lg">Fome de comida, de tempo, de resposta. Escrevo sobre o que acontece no seu corpo, no seu prato e na sua cabeça.</p>
+        </div>
+    </section>
+
+    <!-- ==================== LISTA DE ARTIGOS ==================== -->
+    <section class="mx-auto px-4 py-16 max-w-6xl">
+        <div class="gap-8 grid sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- Artigo 1 -->
+            <a href="de-paciente-a-nutricionista/index.html" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
+                <div class="relative h-60" style="background-image:url('../static/images/introduction.webp');background-size:cover;background-position:center">
+                    <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Minha história</span>
+                </div>
+                <div class="flex flex-col flex-1 p-8">
+                    <p class="text-slate-400 text-xs">Jul 2026</p>
+                    <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">De paciente a nutricionista: minha história</h3>
+                    <p class="flex-1 mt-2 text-slate-600 text-sm">Antes de ser nutricionista, fui paciente. A história real de como saí do ciclo de dietas...</p>
+                    <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
+                        <span>Ler artigo</span>
+                        <span class="mt-1">→</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Próximos artigos entram aqui, seguindo o mesmo bloco <a> acima -->
+
+        </div>
+    </section>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="bg-slate-800 text-slate-200">
+        <div class="mx-auto px-4 py-10 max-w-6xl text-slate-400 text-sm text-center">
+            © 2026 Leticia Argente. Todos os direitos reservados
+        </div>
+    </footer>
+
+</body>
+</html>

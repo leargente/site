@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="antialiased scroll-smooth" lang="pt-BR">
+<head>
+    <title>TÍTULO DO ARTIGO | Leticia Argente</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RESUMO DO ARTIGO EM UMA FRASE">
+    <link rel="icon" href="../../static/images/favicon.png" type="image/png" sizes="192x192">
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Jost:wght@300;400;500;600&display=swap">
+
+    <!-- Open Graph (aparência ao compartilhar no WhatsApp/Instagram) -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="TÍTULO DO ARTIGO">
+    <meta property="og:description" content="RESUMO DO ARTIGO EM UMA FRASE">
+    <meta property="og:image" content="https://leargente.com.br/static/images/NOME-DA-IMAGEM.webp">
+    <meta property="og:url" content="https://leargente.com.br/blog/NOME-DA-PASTA/">
+</head>
+<body class="bg-cream font-body text-slate-800">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="top-0 z-50 fixed inset-x-0 bg-slate-900/30 backdrop-blur-lg">
+        <div class="flex justify-between items-center gap-8 mx-auto px-4 max-w-6xl h-16">
+            <a href="../../index.html#inicio" class="flex items-center gap-3">
+                <img src="../../static/images/logo.png" alt="Logo Leticia Argente" class="rounded-full size-8" loading="lazy">
+                <span class="leading-tight">
+                    <span class="block font-display text-cream text-sm tracking-wide">LETICIA ARGENTE</span>
+                    <span class="block text-[9px] text-cream/70 uppercase tracking-[0.3em]">Nutricionista</span>
+                </span>
+            </a>
+            <a href="../index.html" class="hover:text-clay-300 text-cream text-sm transition duration-300">← Voltar ao blog</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO (imagem de capa) ==================== -->
+    <section class="relative flex items-end min-h-[60vh] overflow-hidden">
+        <div class="absolute inset-0 bg-linear-to-br from-slate-800 to-olive-700"></div>
+        <img src="../../static/images/NOME-DA-IMAGEM.webp" alt="DESCRIÇÃO DA IMAGEM" class="absolute inset-0 size-full object-cover" loading="eager">
+        <div class="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/50 to-slate-900/20"></div>
+        <div class="z-10 relative mx-auto px-4 pb-16 max-w-3xl text-cream">
+            <p class="mb-4 text-clay-300 text-xs uppercase tracking-[0.3em]">Fome de quê?</p>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl leading-tight">TÍTULO DO ARTIGO</h1>
+            <p class="mt-6 text-cream/70 text-sm">Por Leticia Argente</p>
+        </div>
+    </section>
+
+    <!-- ==================== CORPO DO ARTIGO ==================== -->
+    <article class="mx-auto px-4 py-16 max-w-2xl">
+
+        <!-- Parágrafo de abertura (destaque) -->
+        <p class="font-display text-slate-800 text-2xl md:text-3xl leading-snug">FRASE DE ABERTURA EM DESTAQUE.</p>
+
+        <!-- Parágrafo normal -->
+        <p class="mt-8 text-slate-600 text-lg leading-relaxed">Texto do parágrafo aqui.</p>
+
+        <!-- Subtítulo + parágrafos -->
+        <h2 class="mt-12 mb-4 font-display text-slate-800 text-2xl">SUBTÍTULO DA SEÇÃO</h2>
+        <p class="text-slate-600 text-lg leading-relaxed">Primeiro parágrafo da seção.</p>
+        <p class="mt-4 text-slate-600 text-lg leading-relaxed">Parágrafo seguinte (repita este bloco quantas vezes quiser).</p>
+
+        <!-- Frase de impacto (negrito escuro) -->
+        <p class="mt-4 font-medium text-slate-800 text-lg leading-relaxed">Frase que você quer destacar no meio do texto.</p>
+
+        <!-- ===== FOTO NO MEIO DO TEXTO (largura total — boa para fotos deitadas) ===== -->
+        <figure class="my-10">
+            <img src="../../static/images/NOME-DA-FOTO.webp" alt="DESCRIÇÃO DA FOTO" class="shadow-sm rounded-2xl w-full" loading="lazy">
+            <figcaption class="mt-3 text-slate-400 text-sm text-center">Legenda da foto (opcional — pode apagar esta linha)</figcaption>
+        </figure>
+
+        <!-- ===== FOTO VERTICAL (mais estreita e centralizada — boa para fotos em pé) ===== -->
+        <figure class="mx-auto my-10 max-w-sm">
+            <img src="../../static/images/NOME-DA-FOTO.webp" alt="DESCRIÇÃO DA FOTO" class="shadow-sm rounded-2xl w-full" loading="lazy">
+            <figcaption class="mt-3 text-slate-400 text-sm text-center">Legenda da foto (opcional — pode apagar esta linha)</figcaption>
+        </figure>
+
+        <!-- ===== CITAÇÃO / DESTAQUE ===== -->
+        <blockquote class="my-10 pl-6 border-clay-300 border-l-4">
+            <p class="text-slate-600 text-xl italic leading-relaxed">Texto da citação ou frase em destaque.</p>
+        </blockquote>
+
+        <!-- ===== LISTA ===== -->
+        <ul class="space-y-3 mt-6 text-slate-600 text-lg leading-relaxed">
+            <li class="flex gap-3"><span class="text-clay-500">•</span><span>Primeiro item da lista</span></li>
+            <li class="flex gap-3"><span class="text-clay-500">•</span><span>Segundo item da lista</span></li>
+            <li class="flex gap-3"><span class="text-clay-500">•</span><span>Terceiro item da lista</span></li>
+        </ul>
+
+        <!-- Frase de fechamento em destaque -->
+        <p class="mt-12 font-display text-slate-800 text-2xl md:text-3xl leading-snug">FRASE DE FECHAMENTO.</p>
+        <p class="mt-6 text-slate-600 text-lg leading-relaxed">Último parágrafo antes do convite.</p>
+
+        <!-- ==================== CTA FINAL ==================== -->
+        <div class="bg-slate-800 mt-16 p-10 rounded-3xl text-center">
+            <p class="font-display text-cream text-2xl md:text-3xl">Vamos começar sua rotina?</p>
+            <a href="../../index.html#planos" class="inline-flex items-center gap-2 bg-clay-500 hover:bg-clay-600 mt-6 px-8 py-4 rounded-full text-cream transition duration-300">
+                Conheça o acompanhamento
+                <span class="mt-1">→</span>
+            </a>
+        </div>
+    </article>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="bg-slate-800 text-slate-200">
+        <div class="mx-auto px-4 py-10 max-w-6xl text-slate-400 text-sm text-center">
+            © 2026 Leticia Argente. Todos os direitos reservados
+        </div>
+    </footer>
+
+</body>
+</html>

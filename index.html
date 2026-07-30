@@ -167,7 +167,7 @@
             <h2 class="mb-8 font-display text-slate-800 text-4xl md:text-5xl">Muito prazer<br>eu sou a Letícia</h2>
             <p class="mb-4 text-slate-600">Antes de ser nutricionista, fui paciente. Convivi com o sobrepeso até os 30, entre dietas e reganhos, até parar de seguir regras e começar a entender a comida e meu corpo: perdi mais de 20 kg e troquei a advocacia pela nutrição</p>
             <p class="mb-8 text-slate-600">Hoje oriento mulheres a construírem uma rotina alimentar que funcione na vida que já vivem. Estratégias simples, escolhas possíveis, constância. Eu sou a prova de que isso funciona</p>
-            <a href="https://leargente.blogspot.com/2026/07/de-paciente-nutricionista-historia-por.html" target="_blank" class="inline-flex items-center gap-2 font-medium text-clay-600 hover:text-clay-700 transition duration-300">
+            <a href="blog/de-paciente-a-nutricionista/index.html" class="inline-flex items-center gap-2 font-medium text-clay-600 hover:text-clay-700 transition duration-300">
                 <span>Saiba mais sobre minha história</span>
                 <span class="mt-1">→</span>
             </a>
@@ -692,7 +692,7 @@
                 <p class="mb-4 text-clay-600 text-xs uppercase tracking-[0.3em]">Blog</p>
                 <h2 class="font-display text-slate-800 text-4xl md:text-5xl">Artigos e conteúdos</h2>
             </div>
-            <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-clay-600 hover:text-clay-700 text-sm transition duration-300">
+            <a href="blog/index.html" class="inline-flex items-center gap-2 text-clay-600 hover:text-clay-700 text-sm transition duration-300">
                 <span>Ver todos os artigos</span>
                 <span class="mt-1">→</span>
             </a>
@@ -714,14 +714,14 @@
         <div x-show="!carregando" class="gap-8 grid sm:grid-cols-2 lg:grid-cols-3">
             <template x-for="post in posts" :key="post.id">
                 <article class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
-                    <a :href="post.url" target="_blank" rel="noopener" class="block relative h-60 placeholder-img" :style="post.imagem && `background-image:url('${post.imagem}');background-size:cover;background-position:center`">
+                    <a :href="post.url" class="block relative h-60 placeholder-img" :style="post.imagem && `background-image:url('${post.imagem}');background-size:cover;background-position:center`">
                         <span x-show="post.categoria" class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs" x-text="post.categoria"></span>
                     </a>
                     <div class="flex flex-col flex-1 p-8">
                         <p class="text-slate-400 text-xs" x-text="post.data"></p>
                         <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300" x-text="post.titulo"></h3>
                         <p class="flex-1 mt-2 text-slate-600 text-sm" x-text="post.resumo"></p>
-                        <a :href="post.url" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-4 text-clay-600 hover:text-clay-700 text-sm transition duration-300">
+                        <a :href="post.url" class="inline-flex items-center gap-2 mt-4 text-clay-600 hover:text-clay-700 text-sm transition duration-300">
                             <span>Ler artigo</span>
                             <span class="mt-1">→</span>
                         </a>
@@ -874,34 +874,20 @@
                 },
 
                 async fetchPosts() {
-                    const blogId = "570183187337540184"
-                    const apiKey = "AIzaSyArvH1hCbvkwn-6vRBFN6HqbW_na8oQ_zI"
-
-                    try {
-                        const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}&maxResults=3&fetchImages=true`)
-                        if (!res.ok) throw new Error("Falha na requisição")
-                        const data = await res.json()
-
-                        this.posts = (data.items || []).map(post => {
-                            const imgMatch = post.content.match(/<img[^>]+src="([^">]+)"/)
-                            const semTags = post.content.replace(/<[^>]+>/g, " ")
-                            const textoDecodificado = new DOMParser().parseFromString(semTags, "text/html").body.textContent || ""
-                            const textoLimpo = textoDecodificado.replace(/\s+/g, " ").trim()
-
-                            return {
-                                id: post.id,
-                                titulo: post.title,
-                                resumo: textoLimpo.slice(0, 100) + "...",
-                                imagem: post.images?.[0]?.url || (imgMatch ? imgMatch[1] : null),
-                                categoria: post.labels?.[0] || null,
-                                data: new Date(post.published).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" }),
-                                url: post.url
-                            }
-                        })
-                        this.carregando = false
-                    } catch (error) {
-                        console.log(error)
-                    }
+                    // Lista estática dos artigos do blog (leargente.com.br/blog).
+                    // Ao publicar um novo artigo, adicione um objeto aqui em cima da lista.
+                    this.posts = [
+                        {
+                            id: "de-paciente-a-nutricionista",
+                            titulo: "De paciente a nutricionista: minha história",
+                            resumo: "Antes de ser nutricionista, fui paciente. A história real de como saí do ciclo de dietas...",
+                            imagem: "static/images/introduction.webp",
+                            categoria: "Minha história",
+                            data: "jul 2026",
+                            url: "blog/de-paciente-a-nutricionista/index.html"
+                        }
+                    ]
+                    this.carregando = false
                 },
 
             }))
