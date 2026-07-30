@@ -714,7 +714,7 @@
         <div x-show="!carregando" class="gap-8 grid sm:grid-cols-2 lg:grid-cols-3">
             <template x-for="post in posts" :key="post.id">
                 <article class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
-                    <a :href="post.url" class="block relative h-60 placeholder-img" :style="post.imagem && `background-image:url('${post.imagem}');background-size:cover;background-position:center 25%">
+                    <a :href="post.url" class="block relative h-60 placeholder-img" :style="post.imagem && `background-image:url('${post.imagem}');background-size:cover;background-position:center 25%`">
                         <span x-show="post.categoria" class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs" x-text="post.categoria"></span>
                     </a>
                     <div class="flex flex-col flex-1 p-8">
