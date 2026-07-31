@@ -875,7 +875,9 @@
 
                 async fetchPosts() {
                     // Lista estática dos artigos do blog (leargente.com.br/blog).
-                    // Ao publicar um novo artigo, adicione um objeto aqui em cima da lista.
+                    // Ao publicar um novo artigo, adicione um objeto aqui EM CIMA da lista.
+                    // A home mostra apenas os 3 primeiros (veja o .slice(0, 3) no final).
+                    // Pode deixar todos os artigos aqui — os antigos só saem da vitrine, não do blog.
                     this.posts = [
                         {
                             id: "como-emagrecer-de-forma-saudavel",
@@ -913,7 +915,7 @@
                             data: "jul 2026",
                             url: "blog/de-paciente-a-nutricionista/index.html"
                         }
-                    ]
+                    ].slice(0, 3)
                     this.carregando = false
                 },
 
