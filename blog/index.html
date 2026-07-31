@@ -10,6 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Jost:wght@300;400;500;600&display=swap">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js"></script>
+    <style>
+        /* mensagens de erro/sucesso do formulário de newsletter */
+        .formkit-alert:empty { display: none }
+        .formkit-alert { list-style: none; margin: 0; padding: 0; font-size: .8rem; line-height: 1.5 }
+        .formkit-alert-error { color: #b25a2a }
+        .formkit-alert-success { color: #526167 }
+    </style>
 </head>
 <body class="bg-cream font-body text-slate-800">
 
@@ -28,84 +36,176 @@
     </header>
 
     <!-- ==================== HERO DO BLOG ==================== -->
-    <section class="relative flex items-end min-h-[40vh] overflow-hidden">
-        <div class="absolute inset-0 bg-linear-to-br from-slate-800 to-olive-700"></div>
-        <div class="z-10 relative mx-auto px-4 pb-16 max-w-6xl text-cream">
-            <p class="mb-4 text-clay-300 text-xs uppercase tracking-[0.3em]">Blog</p>
-            <h1 class="font-display text-4xl md:text-6xl">Fome de quê?</h1>
-            <p class="mt-6 max-w-xl text-cream/80 text-lg">Fome de comida, de tempo, de resposta. Escrevo sobre o que acontece no seu corpo, no seu prato e na sua cabeça.</p>
+    <section class="relative flex justify-center items-center min-h-[60vh] overflow-hidden">
+
+        <!-- Foto de fundo (object-position enquadra as mãos e a salada) -->
+        <img src="../static/images/blog-capa.webp" alt="" aria-hidden="true"
+             class="absolute inset-0 size-full object-cover"
+             style="object-position:center 70%; filter:saturate(0.9) blur(2px); transform:scale(1.05);">
+
+        <!-- Verde esfumado por cima -->
+        <div class="absolute inset-0" style="background:linear-gradient(115deg, rgba(51,61,66,0.93) 0%, rgba(51,61,66,0.78) 40%, rgba(97,104,59,0.60) 74%, rgba(97,104,59,0.74) 100%)"></div>
+        <div class="absolute inset-0" style="background:radial-gradient(ellipse 75% 95% at 62% 78%, rgba(38,46,50,0) 0%, rgba(38,46,50,0.45) 100%)"></div>
+
+        <!-- Título -->
+        <div class="z-10 relative mx-auto px-4 py-16 max-w-3xl text-cream text-center">
+            <p class="text-clay-300 text-xs uppercase tracking-[0.3em]">Blog</p>
+            <h1 class="mt-6 font-display text-4xl md:text-6xl leading-snug">Fome de quê?</h1>
+            <span class="block mx-auto mt-8 w-14 h-px" style="background:#dfa47a; opacity:0.55"></span>
+            <p class="mx-auto mt-8 max-w-xl text-cream/85 text-lg leading-relaxed">Fome de comida, de tempo, de resposta. Escrevo sobre o que acontece no seu corpo, no seu prato e na sua cabeça.</p>
         </div>
     </section>
 
-    <!-- ==================== LISTA DE ARTIGOS ==================== -->
-    <section class="mx-auto px-4 py-16 max-w-6xl">
-        <div class="gap-8 grid sm:grid-cols-2 lg:grid-cols-3">
+    <!-- ==================== ARTIGOS + SIDEBAR ==================== -->
+    <!--
+        COMO PUBLICAR UM ARTIGO NOVO:
+        1. Copie um bloco <a> inteiro de artigo abaixo e cole no topo da lista.
+        2. Troque o link, a imagem de capa, a data, o título e o resumo.
+        3. Troque a categoria em DOIS lugares do bloco: no data-categoria="..." e no texto do selo.
+        Só isso. A categoria aparece sozinha na lista lateral — não precisa mexer em mais nada.
+    -->
+    <section class="mx-auto px-4 py-16 max-w-6xl"
+             x-data="{
+                filtro: 'todos',
+                categorias: [],
+                init() {
+                    this.categorias = [...new Set(
+                        [...$el.querySelectorAll('[data-categoria]')].map(a => a.dataset.categoria)
+                    )].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+                }
+             }">
+        <div class="items-start gap-12 grid lg:grid-cols-[1fr_300px]">
 
-            <!-- Artigo 4 -->
-            <a href="como-emagrecer-de-forma-saudavel/index.html" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
-                <div class="relative h-60" style="background-image:url('../static/images/saudavel-capa.webp');background-size:cover;background-position:center">
-                    <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Emagrecimento</span>
-                </div>
-                <div class="flex flex-col flex-1 p-8">
-                    <p class="text-slate-400 text-xs">Jul 2026</p>
-                    <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">Como emagrecer de forma saud&aacute;vel: o que realmente funciona segundo a ci&ecirc;ncia</h3>
-                    <p class="flex-1 mt-2 text-slate-600 text-sm">Faz dieta, emagrece e ganha tudo de novo? Entenda por que isso acontece e o que funciona...</p>
-                    <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
-                        <span>Ler artigo</span>
-                        <span class="mt-1">&#8594;</span>
-                    </span>
-                </div>
-            </a>
+            <!-- ===== LISTA DE ARTIGOS ===== -->
+            <div class="gap-8 grid sm:grid-cols-2">
 
-            <!-- Artigo 3 -->
-            <a href="o-que-comer-para-emagrecer/index.html" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
-                <div class="relative h-60" style="background-image:url('../static/images/comer-capa.webp');background-size:cover;background-position:center">
-                    <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Alimenta&ccedil;&atilde;o</span>
-                </div>
-                <div class="flex flex-col flex-1 p-8">
-                    <p class="text-slate-400 text-xs">Jul 2026</p>
-                    <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">O que comer para emagrecer: alimentos que ajudam a perder gordura sem passar fome</h3>
-                    <p class="flex-1 mt-2 text-slate-600 text-sm">Nenhum alimento emagrece sozinho. Entenda quais merecem mais espa&ccedil;o no prato...</p>
-                    <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
-                        <span>Ler artigo</span>
-                        <span class="mt-1">&#8594;</span>
-                    </span>
-                </div>
-            </a>
+                <!-- Artigo 4 -->
+                <a href="como-emagrecer-de-forma-saudavel/index.html" data-categoria="Emagrecimento" x-show="filtro === 'todos' || filtro === $el.dataset.categoria" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
+                    <div class="relative h-60" style="background-image:url('../static/images/saudavel-capa.webp');background-size:cover;background-position:center">
+                        <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Emagrecimento</span>
+                    </div>
+                    <div class="flex flex-col flex-1 p-8">
+                        <p class="text-slate-400 text-xs">Jul 2026</p>
+                        <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">Como emagrecer de forma saud&aacute;vel: o que realmente funciona segundo a ci&ecirc;ncia</h3>
+                        <p class="flex-1 mt-2 text-slate-600 text-sm">Faz dieta, emagrece e ganha tudo de novo? Entenda por que isso acontece e o que funciona...</p>
+                        <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
+                            <span>Ler artigo</span>
+                            <span class="mt-1">&#8594;</span>
+                        </span>
+                    </div>
+                </a>
 
-            <!-- Artigo 2 -->
-            <a href="como-perder-gordura-abdominal/index.html" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
-                <div class="relative h-60" style="background-image:url('../static/images/abdominal-barriga.webp');background-size:cover;background-position:center">
-                    <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Emagrecimento</span>
-                </div>
-                <div class="flex flex-col flex-1 p-8">
-                    <p class="text-slate-400 text-xs">Jul 2026</p>
-                    <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">Como perder gordura abdominal: o que realmente funciona (e o que é mito)</h3>
-                    <p class="flex-1 mt-2 text-slate-600 text-sm">Por que não existe exercício capaz de queimar gordura só da barriga — e o que funciona de verdade...</p>
-                    <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
-                        <span>Ler artigo</span>
-                        <span class="mt-1">&#8594;</span>
-                    </span>
-                </div>
-            </a>
+                <!-- Artigo 3 -->
+                <a href="o-que-comer-para-emagrecer/index.html" data-categoria="Alimentação" x-show="filtro === 'todos' || filtro === $el.dataset.categoria" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
+                    <div class="relative h-60" style="background-image:url('../static/images/comer-capa.webp');background-size:cover;background-position:center">
+                        <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Alimenta&ccedil;&atilde;o</span>
+                    </div>
+                    <div class="flex flex-col flex-1 p-8">
+                        <p class="text-slate-400 text-xs">Jul 2026</p>
+                        <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">O que comer para emagrecer: alimentos que ajudam a perder gordura sem passar fome</h3>
+                        <p class="flex-1 mt-2 text-slate-600 text-sm">Nenhum alimento emagrece sozinho. Entenda quais merecem mais espa&ccedil;o no prato...</p>
+                        <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
+                            <span>Ler artigo</span>
+                            <span class="mt-1">&#8594;</span>
+                        </span>
+                    </div>
+                </a>
 
-            <!-- Artigo 1 -->
-            <a href="de-paciente-a-nutricionista/index.html" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
-                <div class="relative h-60" style="background-image:url('../static/images/introduction.webp');background-size:cover;background-position:center 25%">
-                    <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Minha história</span>
-                </div>
-                <div class="flex flex-col flex-1 p-8">
-                    <p class="text-slate-400 text-xs">Jul 2026</p>
-                    <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">De paciente a nutricionista: minha história</h3>
-                    <p class="flex-1 mt-2 text-slate-600 text-sm">Antes de ser nutricionista, fui paciente. A história real de como saí do ciclo de dietas...</p>
-                    <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
-                        <span>Ler artigo</span>
+                <!-- Artigo 2 -->
+                <a href="como-perder-gordura-abdominal/index.html" data-categoria="Emagrecimento" x-show="filtro === 'todos' || filtro === $el.dataset.categoria" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
+                    <div class="relative h-60" style="background-image:url('../static/images/abdominal-barriga.webp');background-size:cover;background-position:center">
+                        <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Emagrecimento</span>
+                    </div>
+                    <div class="flex flex-col flex-1 p-8">
+                        <p class="text-slate-400 text-xs">Jul 2026</p>
+                        <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">Como perder gordura abdominal: o que realmente funciona (e o que é mito)</h3>
+                        <p class="flex-1 mt-2 text-slate-600 text-sm">Por que não existe exercício capaz de queimar gordura só da barriga — e o que funciona de verdade...</p>
+                        <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
+                            <span>Ler artigo</span>
+                            <span class="mt-1">&#8594;</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Artigo 1 -->
+                <a href="de-paciente-a-nutricionista/index.html" data-categoria="Minha história" x-show="filtro === 'todos' || filtro === $el.dataset.categoria" class="group flex flex-col bg-white/60 hover:shadow-lg border border-slate-200 hover:border-clay-300 rounded-2xl overflow-hidden transition duration-300">
+                    <div class="relative h-60" style="background-image:url('../static/images/introduction.webp');background-size:cover;background-position:center 25%">
+                        <span class="top-4 left-4 absolute bg-cream/95 px-4 py-2 rounded-full text-clay-600 text-xs">Minha história</span>
+                    </div>
+                    <div class="flex flex-col flex-1 p-8">
+                        <p class="text-slate-400 text-xs">Jul 2026</p>
+                        <h3 class="mt-2 font-medium text-slate-800 group-hover:text-clay-600 leading-snug transition duration-300">De paciente a nutricionista: minha história</h3>
+                        <p class="flex-1 mt-2 text-slate-600 text-sm">Antes de ser nutricionista, fui paciente. A história real de como saí do ciclo de dietas...</p>
+                        <span class="inline-flex items-center gap-2 mt-4 text-clay-600 group-hover:text-clay-700 text-sm transition duration-300">
+                            <span>Ler artigo</span>
+                            <span class="mt-1">→</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Próximos artigos entram aqui (veja as instruções no topo desta seção) -->
+
+            </div>
+
+            <!-- ===== SIDEBAR ===== -->
+            <aside class="space-y-8 lg:sticky lg:top-24">
+
+                <!-- Quadro da autora -->
+                <div class="bg-white/60 p-8 border border-slate-200 rounded-2xl text-center">
+                    <img src="../static/images/autora-lateral.webp" alt="Foto de Leticia Argente" class="mx-auto mb-4 rounded-full size-24 object-cover" loading="lazy">
+                    <p class="font-display text-slate-800 text-lg">Leticia Argente</p>
+                    <p class="mt-3 text-slate-600 text-sm leading-relaxed">Nutricionista e apaixonada por transformar entendimento em resultado. Aqui no blog, escrevo sobre o que realmente funciona — sem modismo, sem culpa.</p>
+                    <a href="../index.html#apresentacao" class="inline-flex items-center gap-2 bg-clay-500 hover:bg-clay-600 mt-5 px-6 py-3 rounded-full text-cream text-sm transition duration-300">
+                        Saiba mais
                         <span class="mt-1">→</span>
-                    </span>
+                    </a>
                 </div>
-            </a>
 
-            <!-- Próximos artigos entram aqui, seguindo o mesmo bloco <a> acima -->
+                <!-- Newsletter -->
+                <div class="bg-white/60 p-8 border border-slate-200 rounded-2xl">
+                    <p class="mb-3 font-display text-slate-800 text-sm uppercase" style="letter-spacing:0.2em">Newsletter</p>
+                    <p class="mb-4 text-slate-600 text-sm leading-relaxed">Todo artigo novo direto no seu e-mail. Sem spam, sem promessa milagrosa.</p>
+
+                    <!--
+                        Formulário conectado ao Kit (formulário nº 9750110).
+                        A mensagem de sucesso está dentro de data-options, em success_message.
+                    -->
+                    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+                    <form action="https://app.kit.com/forms/9750110/subscriptions"
+                          class="seva-form formkit-form space-y-3"
+                          method="post"
+                          data-sv-form="9750110"
+                          data-uid="c82d414a90"
+                          data-format="inline"
+                          data-version="5"
+                          data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Pronto! Agora é só confirmar a inscrição no e-mail que acabei de te enviar.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;powered_by&quot;:{&quot;show&quot;:false},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;}},&quot;version&quot;:&quot;5&quot;}">
+
+                        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+
+                        <input type="email" name="email_address" required placeholder="seu@email.com" aria-label="Seu e-mail"
+                               class="bg-cream px-4 py-2 border border-slate-200 rounded-full w-full text-slate-800 text-sm"
+                               style="outline:none">
+
+                        <button type="submit" data-element="submit" class="bg-clay-500 hover:bg-clay-600 px-4 py-2 rounded-full w-full text-cream text-sm transition duration-300 cursor-pointer">
+                            <span>Quero receber</span>
+                        </button>
+                    </form>
+
+                    <p class="mt-4 text-slate-500 text-xs leading-relaxed">Seu e-mail fica só comigo. Você cancela quando quiser.</p>
+                </div>
+
+                <!-- Categorias (montadas sozinhas a partir dos artigos acima) -->
+                <div class="bg-white/60 p-8 border border-slate-200 rounded-2xl">
+                    <p class="mb-4 font-display text-slate-800 text-sm uppercase" style="letter-spacing:0.2em">Categorias</p>
+                    <div class="flex flex-col items-start gap-2">
+                        <button @click="filtro = 'todos'" class="text-sm transition duration-300" :class="filtro === 'todos' ? 'text-clay-600 font-medium' : 'text-slate-600 hover:text-clay-600'">Todos os artigos</button>
+                        <template x-for="cat in categorias" :key="cat">
+                            <button @click="filtro = cat" x-text="cat" class="text-sm text-left transition duration-300" :class="filtro === cat ? 'text-clay-600 font-medium' : 'text-slate-600 hover:text-clay-600'"></button>
+                        </template>
+                    </div>
+                </div>
+
+            </aside>
 
         </div>
     </section>
