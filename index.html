@@ -196,24 +196,24 @@
                     <p class="mt-2 text-clay-600 text-sm text-center">ou R$ 337 no pix</p>
                     <ul class="flex-1 space-y-4 mt-8 text-slate-700 text-sm">
                         <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Avaliação clínica completa (até 1h30) + bioimpedância</li>
-                        <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Plano alimentar no app (até 72h úteis) + material extra</li>
+                        <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Cardápio 100% personalizado no app (até 72h úteis) + material extra</li>
                         <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Feedback semanal + retorno em até 30 dias</li>
                         <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Suporte via WhatsApp pra dúvidas sobre o direcionamento</li>
                     </ul>
-                    <p class="mt-8 pt-8 border-slate-200 border-t text-slate-500 text-sm">Avaliação antropométrica avulsa: <span class="font-medium text-slate-700">R$ 97</span></p>
+                    <p class="mt-8 pt-8 border-slate-200 border-t text-slate-500 text-sm">Avaliação física completa (bioimpedância e adipômetro) inclusa, sem custo adicional</p>
                     <button type="button" @click="abrir('consulta')" class="hover:bg-clay-500 mt-8 px-8 py-4 border border-clay-500 rounded-full text-clay-600 hover:text-cream text-center transition duration-300 cursor-pointer">Quero a consulta</button>
                 </div>
                 <!-- Programa de Acompanhamento -->
                 <div class="relative flex flex-col bg-cream shadow-xl p-8 border border-slate-200 rounded-3xl h-full">
                     <span class="-top-4 right-4 z-10 absolute bg-clay-500 px-4 py-2 rounded-full text-cream text-xs tracking-wide">Mais completo</span>
                     <h3 class="font-display text-slate-800 text-3xl text-center">Programa de Acompanhamento</h3>
-                    <p class="mt-8 text-center"><span class="font-display text-slate-800 text-4xl">6x de R$ 185</span></p>
-                    <p class="mt-2 text-clay-600 text-sm text-center">ou R$ 1.087 no pix</p>
+                    <p class="mt-8 text-center"><span class="font-display text-slate-800 text-4xl">6x de R$ 147</span></p>
+                    <p class="mt-2 text-clay-600 text-sm text-center">ou R$ 850 no pix</p>
                     <p class="mt-8 text-slate-500 text-sm">Tudo da Consulta, e mais:</p>
                     <p class="mt-4 text-clay-600 text-sm tracking-wide">Exclusivo do Acompanhamento</p>
                     <ul class="flex-1 space-y-4 mt-4 text-slate-700 text-sm">
                         <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Avaliação antropométrica inclusa (sem custo adicional)</li>
-                        <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>4 meses de acompanhamento contínuo: consulta inicial + 3 retornos, com evolução progressiva e refinamentos ao longo do processo</li>
+                        <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>6 meses de acompanhamento contínuo: consulta inicial + 5 retornos, com evolução progressiva e refinamentos ao longo do processo</li>
                         <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Orientações individualizadas para eventos especiais (viagem, aniversário, restaurante, Natal), pra você não precisar escolher entre viver a vida e manter o direcionamento</li>
                     </ul>
                     <button type="button" @click="abrir('acompanhamento')" class="bg-clay-500 hover:bg-clay-600 mt-8 px-8 py-4 rounded-full text-cream text-center transition duration-300 cursor-pointer">Quero o acompanhamento</button>
@@ -661,23 +661,12 @@
                 </div>
                 <div class="bg-cream shadow-sm border border-slate-200 rounded-2xl overflow-hidden">
                     <button @click="aberta = (aberta === 4 ? null : 4)" class="flex justify-between items-center px-8 py-4 w-full text-slate-800 text-left cursor-pointer" :aria-expanded="aberta === 4">
-                        <span>Qual a diferença entre bioimpedância e antropometria? Vale a pena adicionar?</span>
+                        <span>Meu atendimento será online, como vai funcionar a avaliação física?</span>
                         <svg class="size-6 text-clay-500 transition-transform duration-300 ease-in-out shrink-0" :class="aberta === 4 && 'rotate-45'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 5v14M5 12h14"/>
                         </svg>
                     </button>
                     <div x-show="aberta === 4" x-collapse.duration.500ms x-cloak>
-                        <p class="px-8 pb-4 text-slate-600 text-sm">A bioimpedância é prática e rápida, mas sofre interferência de fatores externos — hidratação, refeições recentes, fase do ciclo. Já a avaliação antropométrica (medidas com adipômetro e fita métrica), contratada à parte, mede diretamente as dobras cutâneas, com muito menos variação por esses agentes — o que a torna a forma mais confiável de acompanhar sua evolução real ao longo dos meses. Para quem quer precisão no acompanhamento, é o complemento ideal</p>
-                    </div>
-                </div>
-                <div class="bg-cream shadow-sm border border-slate-200 rounded-2xl overflow-hidden">
-                    <button @click="aberta = (aberta === 5 ? null : 5)" class="flex justify-between items-center px-8 py-4 w-full text-slate-800 text-left cursor-pointer" :aria-expanded="aberta === 5">
-                        <span>Meu atendimento será online, como vai funcionar a avaliação física?</span>
-                        <svg class="size-6 text-clay-500 transition-transform duration-300 ease-in-out shrink-0" :class="aberta === 5 && 'rotate-45'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 5v14M5 12h14"/>
-                        </svg>
-                    </button>
-                    <div x-show="aberta === 5" x-collapse.duration.500ms x-cloak>
                         <p class="px-8 pb-4 text-slate-600 text-sm">No atendimento online, a avaliação é adaptada para que você acompanhe sua evolução de casa — e sem perder a análise de composição corporal. Você registra peso, medidas com fita métrica (com orientação de como aferir corretamente) e fotos de acompanhamento em um software que analisa a sua composição corporal, funcionando como uma bioimpedância a distância. Eu recebo esses dados e acompanho seus gráficos de evolução a cada consulta. Assim, online ou presencial, sua evolução nunca é medida só pela balança</p>
                     </div>
                 </div>
@@ -848,8 +837,8 @@
                     },
                     acompanhamento: {
                         nome: "Programa de Acompanhamento",
-                        pix: "R$ 1.087 à vista",
-                        cartao: "6x de R$ 185 sem juros",
+                        pix: "R$ 850 à vista",
+                        cartao: "6x de R$ 147 sem juros",
                         linkPix: "https://www.asaas.com/c/ea59jbwdwlr0vtad",
                         linkCartao: "https://www.asaas.com/c/y425rz9dvrk9cqb0",
                     },
