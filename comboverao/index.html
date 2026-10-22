@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="index, follow">
     <title>Combo Verão: nutrição + treino em 90 dias · Letícia Argente Nutricionista</title>
     <meta name="description" content="Ainda dá tempo de salvar seu verão! Consulta nutricional com a Letícia Argente + consultoria de treino com o Gui Santos, em 90 dias. 3x de R$ 297. Edição limitada: novembro e dezembro.">
     <link rel="canonical" href="https://leargente.com.br/comboverao/">
@@ -205,6 +205,30 @@
         .pay small { display: block; color: var(--slate-500); font-size: .78rem; }
         dialog .after-pay { margin-top: 1.75rem; color: var(--slate-500); font-size: .78rem; }
     </style>
+    <!-- Google Tag Manager -->
+    <!-- INSTRUÇÃO: substitua GTM-XXXXXXX pelo seu ID do GTM (ex: GTM-AB12CD3) -->
+    <!-- Para criar: tagmanager.google.com → Nova conta → Copiar o ID -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- TikTok Pixel -->
+    <!-- INSTRUÇÃO: substitua XXXXXXXXXXXXXXXXXX pelo seu Pixel ID do TikTok -->
+    <!-- Para criar: ads.tiktok.com → Ativos → Eventos → Pixel da Web -->
+    <!--
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._n=ttq._n||{},ttq._n[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+      ttq.load('XXXXXXXXXXXXXXXXXX');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    -->
+    <!-- End TikTok Pixel -->
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -224,6 +248,10 @@
     <!-- End Meta Pixel Code -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- ==================== TOPO ==================== -->
     <header class="top">
@@ -232,7 +260,7 @@
                 <img src="../static/images/logo.png" alt="Logo Letícia Argente">
                 <span><span class="name">Letícia Argente</span><span class="sub">Nutricionista</span></span>
             </div>
-            <button type="button" class="btn btn-solid" data-pagar>Quero o combo</button>
+            <button type="button" class="btn btn-solid" data-pagar data-origem="header">Quero o combo</button>
         </div>
     </header>
 
@@ -248,7 +276,7 @@
                     <span>sem juros no cartão · ou R$ 891 no Pix</span>
                 </div>
                 <div class="cta">
-                    <button type="button" class="btn btn-solid btn-lg" data-pagar>Quero salvar meu verão</button>
+                    <button type="button" class="btn btn-solid btn-lg" data-pagar data-origem="hero">Quero salvar meu verão</button>
                     <div class="trust">
                         <span>Pagamento seguro</span>
                     </div>
@@ -317,7 +345,7 @@
                 </div>
             </div>
             <div class="cta-row">
-                <button type="button" class="btn btn-solid btn-lg" data-pagar>Quero o combo</button>
+                <button type="button" class="btn btn-solid btn-lg" data-pagar data-origem="incluso">Quero o combo</button>
                 <p class="micro">3x de R$ 297 sem juros · ou R$ 891 no Pix</p>
             </div>
         </div>
@@ -385,7 +413,7 @@
                 </figure>
             </div>
             <div class="cta-row">
-                <button type="button" class="btn btn-solid btn-lg" data-pagar>Quero o combo</button>
+                <button type="button" class="btn btn-solid btn-lg" data-pagar data-origem="depoimentos">Quero o combo</button>
             </div>
         </div>
     </section>
@@ -427,6 +455,10 @@
                 <p class="eyebrow">Garanta sua vaga</p>
                 <h2 class="display">Combo Verão</h2>
                 <p class="lead">Edição limitada, disponível apenas em novembro e dezembro</p>
+                <div id="countdown-box" style="display:inline-flex;align-items:center;gap:.6rem;margin-top:1.25rem;padding:.6rem 1.4rem;background:var(--clay-50);border:1px solid var(--clay-300);border-radius:999px;font-size:.9rem;color:var(--clay-700);">
+                    <span style="font-size:1rem;">⏰</span>
+                    <span>Oferta encerra em <strong id="countdown-timer" style="font-family:'Julius Sans One',serif;font-size:1.05rem;">...</strong></span>
+                </div>
             </div>
             <div class="offer-box">
                 <span class="badge">Edição limitada</span>
@@ -443,7 +475,7 @@
                     <li>Consultoria de treino com o Gui Santos: planilha personalizada, vídeos e ajuste em 45 dias</li>
                     <li>Contato direto com o Gui pelo aplicativo e pelo WhatsApp</li>
                 </ul>
-                <button type="button" class="btn btn-solid btn-block btn-lg" data-pagar>Quero salvar meu verão</button>
+                <button type="button" class="btn btn-solid btn-block btn-lg" data-pagar data-origem="oferta">Quero salvar meu verão</button>
                 <p class="note">Pagamento seguro · Direito de arrependimento em 7 dias · Não há opção mensal</p>
             </div>
             <p class="after-title">Depois que você comprar</p>
@@ -509,7 +541,7 @@
             <p class="eyebrow light">Novembro e dezembro</p>
             <h2 class="display">O verão está chegando. O seu plano pode começar agora</h2>
             <p class="lead">Nutrição + treino em 90 dias, em 3x de R$ 297 sem juros</p>
-            <div class="cta-row"><button type="button" class="btn btn-solid btn-lg" data-pagar>Quero salvar meu verão</button></div>
+            <div class="cta-row"><button type="button" class="btn btn-solid btn-lg" data-pagar data-origem="final">Quero salvar meu verão</button></div>
         </div>
     </section>
 
@@ -529,7 +561,7 @@
     <!-- ==================== BARRA FIXA (CELULAR) ==================== -->
     <div class="sticky-cta">
         <div class="t"><b>3x de R$ 297</b>sem juros · 90 dias</div>
-        <button type="button" class="btn btn-solid" data-pagar>Quero o combo</button>
+        <button type="button" class="btn btn-solid" data-pagar data-origem="sticky">Quero o combo</button>
     </div>
 
     <!-- ==================== FORMA DE PAGAMENTO ==================== -->
@@ -550,34 +582,63 @@
     </dialog>
 
     <script>
-        // Links de pagamento do Combo Verão (os mesmos usados no card do site principal)
-        var LINK_PIX = "https://www.asaas.com/000/c/xaeo2bqdsspg0g9z";
-        var LINK_CARTAO = "https://www.asaas.com/000/c/88wm0zpxbj4rob6j";
+        // ── UTMs: captura da URL atual e repassa para o checkout ──────────────────
+        function comUTM(base) {
+            var params = new URLSearchParams(window.location.search);
+            var chaves = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','sck','src'];
+            var extras = new URLSearchParams();
+            chaves.forEach(function(k) { if (params.get(k)) extras.set(k, params.get(k)); });
+            var str = extras.toString();
+            return str ? base + '?' + str : base;
+        }
+
+        // Links de pagamento do Combo Verão
+        var BASE_PIX    = "https://www.asaas.com/000/c/xaeo2bqdsspg0g9z";
+        var BASE_CARTAO = "https://www.asaas.com/000/c/88wm0zpxbj4rob6j";
 
         // Eventos do Meta Pixel (só disparam se o pixel estiver instalado na página)
         function track(evento, dados) { try { if (window.fbq) { window.fbq("track", evento, dados || {}); } } catch (e) {} }
+        // Evento de visualização de conteúdo
         track("ViewContent", { content_name: "Combo Verão", currency: "BRL", value: 891 });
 
+        // DataLayer (GTM) — dispara evento customizado
+        function push(obj) { try { window.dataLayer = window.dataLayer || []; window.dataLayer.push(obj); } catch(e) {} }
+
         var dlg = document.getElementById("pagamento");
-        document.getElementById("pag-pix").href = LINK_PIX;
-        document.getElementById("pag-cartao").href = LINK_CARTAO;
 
         document.querySelectorAll("[data-pagar]").forEach(function (b) {
             b.addEventListener("click", function () {
+                // Atualiza links com UTMs no momento do clique (garante captura)
+                document.getElementById("pag-pix").href    = comUTM(BASE_PIX);
+                document.getElementById("pag-cartao").href = comUTM(BASE_CARTAO);
+
+                var origem = b.getAttribute("data-origem") || "desconhecido";
                 dlg.showModal();
                 document.body.style.overflow = "hidden";
+
+                // Meta Pixel
                 track("InitiateCheckout", { content_name: "Combo Verão", currency: "BRL", value: 891 });
+                // GTM / GA4
+                push({ event: "initiate_checkout", botao_origem: origem, produto: "Combo Verão", valor: 891 });
             });
         });
+
         dlg.querySelectorAll(".pay").forEach(function (a) {
-            a.addEventListener("click", function () { track("AddPaymentInfo", { content_name: "Combo Verão", currency: "BRL", value: 891 }); });
+            a.addEventListener("click", function () {
+                var metodo = a.getAttribute("data-metodo") || "desconhecido";
+                // Meta Pixel
+                track("AddPaymentInfo", { content_name: "Combo Verão", currency: "BRL", value: 891 });
+                // GTM / GA4
+                push({ event: "selecionar_pagamento", metodo: metodo, produto: "Combo Verão", valor: 891 });
+            });
         });
+
         function fechar() { dlg.close(); }
         dlg.querySelector("[data-fechar]").addEventListener("click", fechar);
         dlg.addEventListener("click", function (e) { if (e.target === dlg) fechar(); });
         dlg.addEventListener("close", function () { document.body.style.overflow = ""; });
 
-        // Contagem real até o início do verão (21/12/2026)
+        // ── Contagem até o início do verão (21/12/2026) ───────────────────────────
         (function () {
             var alvo = new Date(2026, 11, 21, 0, 0, 0);
             var dias = Math.ceil((alvo - new Date()) / 86400000);
@@ -585,6 +646,23 @@
                 document.getElementById("dias-verao").textContent = dias + (dias === 1 ? " dia" : " dias");
                 document.getElementById("dias-verao-sub").textContent = "para o início do verão";
             }
+        })();
+
+        // ── Countdown da oferta (encerra 31/12/2026) ──────────────────────────────
+        (function () {
+            var fim = new Date("2026-12-31T23:59:59-03:00");
+            var el = document.getElementById("countdown-timer");
+            var box = document.getElementById("countdown-box");
+            function atualizar() {
+                var diff = fim - new Date();
+                if (diff <= 0) { if (box) box.style.display = "none"; return; }
+                var dias  = Math.floor(diff / 86400000);
+                var horas = Math.floor((diff % 86400000) / 3600000);
+                var min   = Math.floor((diff % 3600000) / 60000);
+                if (el) el.textContent = dias + "d " + horas + "h " + min + "min";
+            }
+            atualizar();
+            setInterval(atualizar, 60000);
         })();
     </script>
 </body>
