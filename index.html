@@ -12,8 +12,40 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Jost:wght@300;400;500;600&display=swap">
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.15.12/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MSWQM3MQ');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2180326092893219');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', { content_name: 'Site Principal', currency: 'BRL' });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2180326092893219&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-cream font-body text-slate-800" :class="aberto && 'overflow-hidden'" x-data="alpine">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSWQM3MQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- ==================== HEADER ==================== -->
     <header class="top-0 z-50 fixed inset-x-0 bg-slate-900/30 backdrop-blur-lg">
@@ -783,7 +815,7 @@
             <h3 id="modal-titulo" class="font-display text-slate-800 text-3xl" x-text="plano.nome"></h3>
             <p class="mt-2 text-slate-600 text-sm">Como você prefere pagar?</p>
             <div class="gap-4 grid mt-8">
-                <a :href="plano.linkPix" class="flex items-center gap-4 bg-white/60 p-4 border border-slate-200 hover:border-clay-600 rounded-2xl transition duration-300">
+                <a :href="plano.linkPix" @click="trackPagamento('pix')" class="flex items-center gap-4 bg-white/60 p-4 border border-slate-200 hover:border-clay-600 rounded-2xl transition duration-300">
                     <span class="flex justify-center items-center bg-clay-50 rounded-xl size-11 text-clay-600 shrink-0">
                         <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.5 21.5 12 12 21.5 2.5 12z"/>
@@ -794,7 +826,7 @@
                         <span class="block text-slate-500 text-xs" x-text="plano.pix"></span>
                     </span>
                 </a>
-                <a :href="plano.linkCartao" class="flex items-center gap-4 bg-white/60 p-4 border border-slate-200 hover:border-clay-600 rounded-2xl transition duration-300">
+                <a :href="plano.linkCartao" @click="trackPagamento('cartao')" class="flex items-center gap-4 bg-white/60 p-4 border border-slate-200 hover:border-clay-600 rounded-2xl transition duration-300">
                     <span class="flex justify-center items-center bg-clay-50 rounded-xl size-11 text-clay-600 shrink-0">
                         <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <rect x="2.5" y="5" width="19" height="14" rx="2"/>
@@ -856,6 +888,19 @@
                 abrir(id) {
                     this.plano = this.planos[id]
                     this.aberto = true
+                    // Rastreamento: recuperação de cliques e remarketing
+                    var valores = { consulta: 337, acompanhamento: 850 }
+                    var valor = valores[id] || 0
+                    try { if (window.fbq) window.fbq('track', 'InitiateCheckout', { content_name: this.plano.nome, currency: 'BRL', value: valor }) } catch(e) {}
+                    try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'initiate_checkout', produto: this.plano.nome, valor: valor }) } catch(e) {}
+                },
+
+                trackPagamento(metodo) {
+                    var valor = metodo === 'pix'
+                        ? parseFloat((this.plano.pix || '').replace(/[^\d,]/g,'').replace(',','.')) || 0
+                        : 0
+                    try { if (window.fbq) window.fbq('track', 'AddPaymentInfo', { content_name: this.plano.nome, currency: 'BRL', value: valor }) } catch(e) {}
+                    try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'selecionar_pagamento', metodo: metodo, produto: this.plano.nome, valor: valor }) } catch(e) {}
                 },
 
                 fechar() {
