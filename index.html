@@ -222,24 +222,30 @@
             </div>
             <div class="items-start gap-8 grid lg:grid-cols-3 mx-auto max-w-6xl">
                 <!-- Combo Verão (edição limitada nov/dez) -->
-                <div class="relative flex flex-col bg-slate-800 shadow-xl p-8 border border-clay-500 rounded-3xl h-full">
+                <div class="relative flex flex-col bg-slate-800 shadow-xl p-6 xl:p-8 border border-clay-500 rounded-3xl h-full">
                     <span class="-top-4 right-4 z-10 absolute bg-clay-500 px-4 py-2 rounded-full text-cream text-xs tracking-wide">Edição limitada</span>
-                    <p class="md:mt-4 text-clay-300 text-xs text-center uppercase tracking-[0.3em]">Nov e Dez</p>
-                    <h3 class="mt-2 font-display text-cream text-3xl text-center">Combo Verão</h3>
+                    <div class="flex flex-col justify-center lg:min-h-[4.5rem]">
+                        <p class="mb-2 text-clay-300 text-xs text-center uppercase tracking-[0.3em]">Nov e Dez</p>
+                        <h3 class="font-display text-3xl lg:text-2xl xl:text-3xl text-cream text-center">Combo Verão</h3>
+                    </div>
                     <p class="mt-8 text-center"><span class="font-display text-cream text-4xl">3x de R$ 297</span></p>
                     <p class="mt-2 text-clay-300 text-sm text-center">ou R$ 891 no pix</p>
                     <p class="mt-8 text-slate-200 text-sm">Nutrição + treino em 90 dias:</p>
-                    <ul class="flex-1 space-y-4 mt-4 text-slate-100 text-sm">
+                    <div class="flex flex-col flex-1 mt-4">
+                    <ul class="space-y-4 text-slate-100 text-sm">
                         <li class="flex gap-4"><span class="text-clay-300 shrink-0">✓</span>3 consultas comigo (inicial, 45 dias e 90 dias), todas com avaliação física completa</li>
                         <li class="flex gap-4"><span class="text-clay-300 shrink-0">✓</span>Consultoria de treino com o Gui Santos, com ajuste aos 45 dias</li>
                         <li class="flex gap-4"><span class="text-clay-300 shrink-0">✓</span>Tudo que a consulta oferece, no consultório ou online</li>
                     </ul>
-                    <button type="button" @click="abrir('combo')" class="bg-clay-500 hover:bg-clay-600 mt-8 px-8 py-4 rounded-full text-cream text-center transition duration-300 cursor-pointer">Quero o combo</button>
-                    <a href="comboverao/" class="mt-4 text-slate-200 hover:text-cream text-sm text-center underline underline-offset-4 transition duration-300">Saber mais</a>
+                    <a href="comboverao/" class="mt-6 text-slate-200 hover:text-cream text-sm underline underline-offset-4 transition duration-300">Saber mais sobre o combo</a>
+                    </div>
+                    <button type="button" @click="abrir('combo')" class="bg-clay-500 hover:bg-clay-600 mt-8 px-8 lg:px-4 xl:px-8 py-4 border border-transparent rounded-full text-cream text-center transition duration-300 cursor-pointer">Quero o combo</button>
                 </div>
                 <!-- Consulta -->
-                <div class="flex flex-col bg-cream shadow-sm p-8 border border-slate-200 rounded-3xl h-full">
-                    <h3 class="md:mt-4 font-display text-slate-800 text-3xl text-center">Consulta</h3>
+                <div class="flex flex-col bg-cream shadow-sm p-6 xl:p-8 border border-slate-200 rounded-3xl h-full">
+                    <div class="flex flex-col justify-center lg:min-h-[4.5rem]">
+                        <h3 class="font-display text-3xl lg:text-2xl xl:text-3xl text-slate-800 text-center">Consulta</h3>
+                    </div>
                     <p class="mt-8 text-center"><span class="font-display text-slate-800 text-4xl">2x de R$ 175</span></p>
                     <p class="mt-2 text-clay-600 text-sm text-center">ou R$ 337 no pix</p>
                     <ul class="flex-1 space-y-4 mt-8 text-slate-700 text-sm">
@@ -249,12 +255,14 @@
                         <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Suporte via WhatsApp pra dúvidas sobre o direcionamento</li>
                     </ul>
                     <p class="mt-8 pt-8 border-slate-200 border-t text-slate-500 text-sm">Avaliação física completa (bioimpedância e adipômetro) inclusa, sem custo adicional</p>
-                    <button type="button" @click="abrir('consulta')" class="hover:bg-clay-500 mt-8 px-8 py-4 border border-clay-500 rounded-full text-clay-600 hover:text-cream text-center transition duration-300 cursor-pointer">Quero a consulta</button>
+                    <button type="button" @click="abrir('consulta')" class="hover:bg-clay-500 mt-8 px-8 lg:px-4 xl:px-8 py-4 border border-clay-500 rounded-full text-clay-600 hover:text-cream text-center transition duration-300 cursor-pointer">Quero a consulta</button>
                 </div>
                 <!-- Programa de Acompanhamento -->
-                <div class="relative flex flex-col bg-cream shadow-xl p-8 border border-slate-200 rounded-3xl h-full">
+                <div class="relative flex flex-col bg-cream shadow-xl p-6 xl:p-8 border border-slate-200 rounded-3xl h-full">
                     <span class="-top-4 right-4 z-10 absolute bg-clay-500 px-4 py-2 rounded-full text-cream text-xs tracking-wide">Mais completo</span>
-                    <h3 class="font-display text-slate-800 text-3xl text-center">Programa de Acompanhamento</h3>
+                    <div class="flex flex-col justify-center lg:min-h-[4.5rem]">
+                        <h3 class="font-display text-3xl lg:text-2xl xl:text-3xl text-slate-800 text-center">Programa de Acompanhamento</h3>
+                    </div>
                     <p class="mt-8 text-center"><span class="font-display text-slate-800 text-4xl">6x de R$ 147</span></p>
                     <p class="mt-2 text-clay-600 text-sm text-center">ou R$ 850 no pix</p>
                     <p class="mt-8 text-slate-500 text-sm">Tudo da Consulta, e mais:</p>
@@ -264,7 +272,7 @@
                         <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>6 meses de acompanhamento contínuo: consulta inicial + 5 retornos, com evolução progressiva e refinamentos ao longo do processo</li>
                         <li class="flex gap-4"><span class="text-clay-600 shrink-0">✓</span>Orientações individualizadas para eventos especiais (viagem, aniversário, restaurante, Natal), pra você não precisar escolher entre viver a vida e manter o direcionamento</li>
                     </ul>
-                    <button type="button" @click="abrir('acompanhamento')" class="bg-clay-500 hover:bg-clay-600 mt-8 px-8 py-4 rounded-full text-cream text-center transition duration-300 cursor-pointer">Quero o acompanhamento</button>
+                    <button type="button" @click="abrir('acompanhamento')" class="bg-clay-500 hover:bg-clay-600 mt-8 px-8 lg:px-4 xl:px-8 py-4 border border-transparent rounded-full text-cream text-center transition duration-300 cursor-pointer">Quero o acompanhamento</button>
                 </div>
             </div>
         </div>
