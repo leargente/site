@@ -220,7 +220,23 @@
                 <p class="mb-4 text-clay-300 text-xs uppercase tracking-[0.3em]">Planos</p>
                 <h2 class="font-display text-cream text-4xl md:text-5xl">Escolha como vou te ajudar:</h2>
             </div>
-            <div class="items-start gap-8 grid md:grid-cols-2 mx-auto max-w-5xl">
+            <div class="items-start gap-8 grid lg:grid-cols-3 mx-auto max-w-6xl">
+                <!-- Combo Verão (edição limitada nov/dez) -->
+                <div class="relative flex flex-col bg-slate-800 shadow-xl p-8 border border-clay-500 rounded-3xl h-full">
+                    <span class="-top-4 right-4 z-10 absolute bg-clay-500 px-4 py-2 rounded-full text-cream text-xs tracking-wide">Edição limitada</span>
+                    <p class="md:mt-4 text-clay-300 text-xs text-center uppercase tracking-[0.3em]">Nov e Dez</p>
+                    <h3 class="mt-2 font-display text-cream text-3xl text-center">Combo Verão</h3>
+                    <p class="mt-8 text-center"><span class="font-display text-cream text-4xl">3x de R$ 297</span></p>
+                    <p class="mt-2 text-clay-300 text-sm text-center">ou R$ 891 no pix</p>
+                    <p class="mt-8 text-slate-200 text-sm">Nutrição + treino em 90 dias:</p>
+                    <ul class="flex-1 space-y-4 mt-4 text-slate-100 text-sm">
+                        <li class="flex gap-4"><span class="text-clay-300 shrink-0">✓</span>3 consultas comigo (inicial, 45 dias e 90 dias), todas com avaliação física completa</li>
+                        <li class="flex gap-4"><span class="text-clay-300 shrink-0">✓</span>Consultoria de treino com o Gui Santos, com ajuste aos 45 dias</li>
+                        <li class="flex gap-4"><span class="text-clay-300 shrink-0">✓</span>Tudo que a consulta oferece, no consultório ou online</li>
+                    </ul>
+                    <button type="button" @click="abrir('combo')" class="bg-clay-500 hover:bg-clay-600 mt-8 px-8 py-4 rounded-full text-cream text-center transition duration-300 cursor-pointer">Quero o combo</button>
+                    <a href="comboverao/" class="mt-4 text-slate-200 hover:text-cream text-sm text-center underline underline-offset-4 transition duration-300">Saber mais</a>
+                </div>
                 <!-- Consulta -->
                 <div class="flex flex-col bg-cream shadow-sm p-8 border border-slate-200 rounded-3xl h-full">
                     <h3 class="md:mt-4 font-display text-slate-800 text-3xl text-center">Consulta</h3>
@@ -867,6 +883,13 @@
                         linkPix: "https://www.asaas.com/c/zb1lxamdnwgj2kxw",
                         linkCartao: "https://www.asaas.com/c/nwz0fpi0xtcd8ftn"
                     },
+                    combo: {
+                        nome: "Combo Verão",
+                        pix: "R$ 891 à vista",
+                        cartao: "3x de R$ 297 sem juros",
+                        linkPix: "https://www.asaas.com/000/c/xaeo2bqdsspg0g9z",
+                        linkCartao: "https://www.asaas.com/000/c/88wm0zpxbj4rob6j"
+                    },
                     acompanhamento: {
                         nome: "Programa de Acompanhamento",
                         pix: "R$ 850 à vista",
@@ -889,7 +912,7 @@
                     this.plano = this.planos[id]
                     this.aberto = true
                     // Rastreamento: recuperação de cliques e remarketing
-                    var valores = { consulta: 337, acompanhamento: 850 }
+                    var valores = { consulta: 337, acompanhamento: 850, combo: 891 }
                     var valor = valores[id] || 0
                     try { if (window.fbq) window.fbq('track', 'InitiateCheckout', { content_name: this.plano.nome, currency: 'BRL', value: valor }) } catch(e) {}
                     try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'initiate_checkout', produto: this.plano.nome, valor: valor }) } catch(e) {}
