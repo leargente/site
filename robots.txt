@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /obrigado/
+Disallow: /desafio21dias/
+Disallow: /blog/modelo/
+
+Sitemap: https://leargente.com.br/sitemap.xml
